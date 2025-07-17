@@ -18,16 +18,46 @@ package com.example.inventory.ui.item
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.inventory.data.Item
 import com.example.inventory.data.ItemsRepository
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 /**
  * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
  */
 class ItemDetailsViewModel(
-    savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle,
+    private val itemsRepository: ItemsRepository
 ) : ViewModel() {
 
     private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+
+    val itemDetailsUiState: StateFlow<ItemDetailsUiState> =
+        itemsRepository.getItemStream(itemId)
+            .map { item ->
+                ItemDetailsUiState(
+                    outOfStock = (item?.quantity ?: 0) <= 0,
+                    itemDetails = item?.toItemDetails() ?: ItemDetails()
+                )
+            }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5000L),
+                initialValue = ItemDetailsUiState()
+            )
+
+    fun deleteItem(onResult: () -> Unit) {
+        viewModelScope.launch {
+            val item = itemDetailsUiState.value.itemDetails.toItem()
+            itemsRepository.deleteItem(item)
+            onResult()
+        }
+    }
 
     companion object {
         private const val TIMEOUT_MILLIS = 5_000L
