@@ -21,6 +21,16 @@ Esta aplicación permite gestionar un inventario de productos de manera sencilla
 
 ---
 
+## 🖼️ Capturas de Pantalla
+
+<p align="center">
+  <img src="Captura de pantalla/Screenshot_20250717_135624.png" alt="Pantalla principal" width="250"/>
+  <img src="Captura de pantalla/Screenshot_20250717_135706.png" alt="Agregar ítem" width="250"/>
+  <img src="Captura de pantalla/Screenshot_20250717_141526.png" alt="Detalle de ítem" width="250"/>
+</p>
+
+---
+
 ## 📝 Requisitos Previos
 
 Antes de explorar este proyecto, es recomendable tener conocimientos sobre:
@@ -33,33 +43,26 @@ Antes de explorar este proyecto, es recomendable tener conocimientos sobre:
 
 ---
 
-## 🛠️ ¿Cómo empezar?
+## ⚡ Características
 
-1. Clona o descarga este repositorio.
-2. Ábrelo en **Android Studio** (recomendado).
-3. Ejecuta la app en un emulador o dispositivo físico.
-4. Explora el código fuente y experimenta con las funcionalidades.
-
----
-
-## 📂 Estructura del Proyecto
-
-```
-app/
- └─ src/
-     └─ main/
-         ├─ java/com/example/inventory/
-         │   ├─ data/        # Lógica de datos y base de datos
-         │   ├─ ui/          # Pantallas y navegación
-         │   └─ ...
-         └─ res/             # Recursos gráficos y de interfaz
-```
+- Añadir, editar y eliminar productos del inventario.
+- Visualización en tiempo real de los cambios.
+- Persistencia local con Room y SQLite.
+- Interfaz intuitiva y moderna.
 
 ---
 
-## 🤝 Contribuciones
+## 🛠️ Instalación
 
-¡Las contribuciones son bienvenidas! Consulta el archivo [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+1. Clona este repositorio.
+2. Ábrelo en Android Studio.
+3. Ejecuta la app en un emulador o dispositivo físico (API 26+).
+
+---
+
+## 📚 Créditos
+
+Proyecto basado en el [Curso Oficial de Android](https://developer.android.com/courses/android-basics-compose/course).
 
 ---
 
