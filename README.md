@@ -24,9 +24,11 @@ Esta aplicación permite gestionar un inventario de productos de manera sencilla
 ## 🖼️ Capturas de Pantalla
 
 <p align="center">
-  <img src="Captura de pantalla/Screenshot_20250717_135624.png" alt="Pantalla principal" width="250"/>
-  <img src="Captura de pantalla/Screenshot_20250717_135706.png" alt="Agregar ítem" width="250"/>
-  <img src="Captura de pantalla/Screenshot_20250717_141526.png" alt="Detalle de ítem" width="250"/>
+  <img src="Captura de pantalla/Screenshot_20250717_135624.png" alt="Pantalla principal" width="200"/>
+  <img src="Captura de pantalla/Screenshot_20250717_135706.png" alt="Agregar ítem" width="200"/>
+  <img src="Captura de pantalla/Screenshot_20250717_141526.png" alt="Detalle de ítem" width="200"/>
+  <img src="Captura de pantalla/Screenshot_20250722_191714.png" alt="Editar ítem" width="200"/>
+  <img src="Captura de pantalla/Screenshot_20250722_191801.png" alt="Eliminar ítem" width="200"/>
 </p>
 
 ---
@@ -60,9 +62,11 @@ Antes de explorar este proyecto, es recomendable tener conocimientos sobre:
 
 ---
 
-## 📚 Créditos
+## 📚 Créditos y Recursos
 
-Proyecto basado en el [Curso Oficial de Android](https://developer.android.com/courses/android-basics-compose/course).
+- [Repositorio oficial Google](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app)
+- [Documentación Jetpack Compose](https://developer.android.com/jetpack/compose)
+- [Documentación Room](https://developer.android.com/training/data-storage/room)
 
 ---
 

@@ -51,11 +51,18 @@ class ItemDetailsViewModel(
                 initialValue = ItemDetailsUiState()
             )
 
-    fun deleteItem(onResult: () -> Unit) {
+    fun reduceQuantityByOne() {
         viewModelScope.launch {
-            val item = itemDetailsUiState.value.itemDetails.toItem()
-            itemsRepository.deleteItem(item)
-            onResult()
+            val currentItem = itemDetailsUiState.value.itemDetails.toItem()
+            if (currentItem.quantity > 0) {
+                itemsRepository.updateItem(currentItem.copy(quantity = currentItem.quantity - 1))
+            }
+        }
+    }
+
+    fun deleteItem() {
+        viewModelScope.launch {
+            itemsRepository.deleteItem(itemDetailsUiState.value.itemDetails.toItem())
         }
     }
 
